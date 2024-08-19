@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Alumnus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .alert {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-dismissible fade show" role="alert">
+                    {% for message in messages %}
+                        <div>{{ message }}</div>
+                    {% endfor %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endif %}
+        {% endwith %}
+        <h1>Alumnus Registration</h1>
+        <form method="POST" action="{{ url_for('register_alumnus') }}">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select class="form-control" id="department" name="department" required>
+                    <option value="1">Aerospace Engineering</option>
+                    <option value="2">Artificial Intelligence & Machine Learning</option>
+                    <option value="3">Biotechnology</option>
+                    <option value="4">Chemical Engineering</option>
+                    <option value="5">Civil Engineering</option>
+                    <option value="6">Computer Science and Engineering</option>
+                    <option value="7">Electrical and Electronics Engineering</option>
+                    <option value="8">Electronics and Communication Engineering</option>
+                    <option value="9">Electronics and Instrumentation Engineering</option>
+                    <option value="10">Industrial Engineering and Management</option>
+                    <option value="11">Information Science and Engineering</option>
+                    <option value="12">Mechanical Engineering</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="passout_year">Passout Year</label>
+                <input type="number" class="form-control" id="passout_year" name="passout_year" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

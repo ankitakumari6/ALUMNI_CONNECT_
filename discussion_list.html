@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Discussion Forum</h1>
+    </header>
+
+    <main>
+        <section id="all-discussions">
+            <h2>All Discussions</h2>
+            <ul>
+                {% for discussion in discussions %}
+                    <li><a href="{{ url_for('view_discussion', discussion_id=discussion.id) }}">{{ discussion.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="new-discussion">
+            <h2>Start a New Discussion</h2>
+            <form action="{{ url_for('create_discussion') }}" method="post">
+                <label for="discussion-title">Discussion Title:</label><br>
+                <input type="text" id="discussion-title" name="discussion_title" required><br>
+                <button type="submit">Start Discussion</button>
+            </form>
+        </section>
+    </main>
+
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Details</title>
+    <style>
+        /* Add your CSS styling here */
+        /* This is just a basic example */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Alumni Details</h1>
+    <form method="POST" action="/update_details">
+        <label for="current_location">Current Location:</label>
+        <input type="text" id="current_location" name="current_location" value="{{ alumni.current_location }}"><br>
+        
+        <label for="working_at">Working At:</label>
+        <input type="text" id="working_at" name="working_at" value="{{ alumni.working_at }}"><br>
+        
+        <label for="linked_in_profile_link">LinkedIn Profile Link:</label>
+        <input type="text" id="linked_in_profile_link" name="linked_in_profile_link" value="{{ alumni.linked_in_profile_link }}"><br>
+        
+        <label for="about_me">About Me:</label>
+        <textarea id="about_me" name="about_me">{{ alumni.about_me }}</textarea><br>
+        
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

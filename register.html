@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Options</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: hwb(220 98% 0%); /* Blue background color */
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: rgb(11, 8, 8); /* White color for better visibility on blue background */
+        }
+
+        .btn-option {
+            margin: 20px;
+            padding: 15px 30px; /* Increased padding for larger buttons */
+            background-color: #17a2b8; /* Different shade of blue */
+            border: none;
+            color: white;
+            font-size: 1.2rem; /* Increased font size for larger buttons */
+            border-radius: 5px;
+        }
+
+        .btn-option:hover {
+            background-color: #439e48; /* Darker shade of blue on hover */
+        }
+        #logo {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+        }
+        #college-heading {
+            font-size: 2.5em;
+            position: absolute;
+            top: 10px;
+            left: 50%; /* Centering horizontally */
+            transform: translateX(-50%); /* Adjusting for the width of the heading */
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="{{ url_for('static', filename='images/NEW LOGO.jpeg') }}" alt="RVCE Logo">
+    <h1 id="college-heading">RV COLLEGE OF ENGINEERING</h1>
+    <div class="text-center">
+        <h1>Choose Registration Option</h1>
+        <a href="/register_student" class="btn btn-option">Register as Student</a>
+        <a href="/register_alumnus" class="btn btn-option">Register as Alumnus</a>
+        <a href="/register_faculty" class="btn btn-option">Register as Faculty</a>
+    </div>
+</body>
+</html>

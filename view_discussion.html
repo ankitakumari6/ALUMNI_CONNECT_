@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Discussion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ discussion.title }}</h1>
+    </header>
+
+    <main>
+        <section id="discussion-messages">
+            <h2>Messages</h2>
+            <ul>
+                {% for message in messages %}
+                    <li><strong>{{ message.user.name }}:</strong> {{ message.message }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Add Your Message</h3>
+            <form action="{{ url_for('add_message', discussion_id=discussion.id) }}" method="post">
+                <label for="new-message">Your Message:</label><br>
+                <textarea id="new-message" name="new_message" required></textarea><br>
+                <button type="submit">Post Message</button>
+            </form>
+        </section>
+    </main>
+
+   
+</body>
+</html>

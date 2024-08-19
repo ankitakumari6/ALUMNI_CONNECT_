@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Job Postings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .job-posting {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Job Postings</h1>
+        {% if job_postings %}
+            {% for job in job_postings %}
+                <div class="job-posting">
+                    <h4>{{ job.company }}</h4>
+                    <p><strong>Role:</strong> {{ job.role }}</p>
+                    <p><strong>CTC:</strong> {{ job.ctc }}</p>
+                    <p><strong>Location:</strong> {{ job.job_location }}</p>
+                    <p><strong>Contact Email:</strong> <a href="mailto:{{ job.alumni_email }}">{{ job.alumni_email }}</a></p>
+                    <p><strong>Additional info:</strong>{{ job.content }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have not posted any job openings yet.</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .feedback-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .feedback-link a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Alumni Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/alumni_form">Update Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/alumni_details">Alumni Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/achievements">Alumni Achievements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_updates">College Updates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/discussion_list">Discussion forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/alumni_job_postings">Add job posting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/alumni_job_postings_view">View added posting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_faculty">Contact Faculty</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- College Image -->
+        <div class="text-center">
+            <img src="/static/images/img2.jpg" alt="College Photo" style="max-width: 800px;">
+        </div>
+        
+        <!-- Welcome Message -->
+        <div class="welcome-message">
+            <h2>Welcome to the Alumni Dashboard of RV Alumni Connect!</h1>
+            <h3>Explore the various features and resources available for alumni.</h3>
+        </div>
+        
+        <!-- Link to Feedback Form -->
+        <div class="feedback-link">
+            <h4>Have feedback? <a href="/feedback">Click here</a> to submit your feedback.</h4>
+        </div>
+        
+        <!-- Add more sections and features as needed -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

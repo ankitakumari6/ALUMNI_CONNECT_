@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start New Discussion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Start New Discussion</h1>
+    </header>
+
+    <main>
+        <section id="new-discussion-form">
+            <form action="{{ url_for('create_discussion') }}" method="post">
+                <label for="discussion-title">Discussion Title:</label><br>
+                <input type="text" id="discussion-title" name="discussion_title" required><br>
+                <button type="submit">Start Discussion</button>
+            </form>
+        </section>
+    </main>
+
+    
+</body>
+</html>

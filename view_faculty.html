@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Faculty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .faculty-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .faculty-member {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faculty-member strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .faculty-member p {
+            margin: 0;
+        }
+        .faculty-email {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .faculty-email:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>View Faculty</h1>
+        </div>
+        <form method="POST" action="/view_faculty">
+            <div class="form-group">
+                <label for="department">Select Department:</label>
+                <select id="department" name="department" required>
+                    {% for department in departments %}
+                        <option value="{{ department.dept_id }}">{{ department.dept_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="View Faculty">
+        </form>
+        {% if faculty_list %}
+            <ul class="faculty-list">
+                {% for faculty in faculty_list %}
+                    <li class="faculty-member">
+                        <strong>{{ faculty.name }}</strong>
+                        <p>{{ faculty.designation }}</p>
+                        <a href="mailto:{{ faculty.email }}" class="faculty-email">{{ faculty.email }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
+
